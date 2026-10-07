@@ -1,14 +1,13 @@
 ---
 layout: default
-title: BinaryKitten
+title: Kathryn Reeve
 ---
 
-# BinaryKitten's GitHub site
+## What I do
 
-Welcome to the world of tomorrow....
+Senior and lead PHP developer, currently building things in Laravel at Plannr Technologies. Over the years I've led platform teams, rebuilt internal services, and spent a lot of time making other developers' lives easier through better tooling, CI, and standards.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.... Today!
+## Elsewhere
 
-## Projects
-
-- [GitHub profile](https://github.com/BinaryKitten)
+- [GitHub](https://github.com/BinaryKitten)
+- [Email](mailto:Kathryn@BinaryKitten.com)

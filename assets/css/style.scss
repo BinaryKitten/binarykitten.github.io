@@ -1,0 +1,177 @@
+---
+---
+$navy: #1f395a;
+$navy-dark: #172c46;
+$ink: #1b1b1b;
+$muted: #555;
+$rule: #cfd6df;
+$sidebar-w: 300px;
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $ink;
+  background: #fff;
+}
+
+a { color: $navy; }
+a:hover { text-decoration: none; }
+
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------- sidebar ---------- */
+
+.sidebar {
+  position: relative;
+  flex: 0 0 $sidebar-w;
+  padding: 1.5rem 1.5rem 7rem;
+  background: $navy;
+  color: #fff;
+  font-size: 0.85rem;
+
+  a { color: #fff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* angled foot, as on the CV */
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 6rem;
+    background: #fff;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 55%);
+  }
+}
+
+.sidebar__photo {
+  margin: 0 0 1.75rem;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 388 / 512;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
+  }
+}
+
+.sidebar__contact {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 0 0.9rem;
+  }
+  svg {
+    flex: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: #fff;
+  }
+}
+
+.sidebar__about {
+  h2 {
+    margin: 0 0 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid rgba(#fff, 0.6);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+  p { margin: 0 0 0.9rem; }
+}
+
+.sidebar__logo {
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  z-index: 1;
+  transform: translateX(-50%);
+  img { width: 44px; height: auto; opacity: 0.9; }
+}
+
+/* ---------- content ---------- */
+
+.content {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 52rem;
+  padding: 1.5rem 2.5rem 3rem;
+}
+
+.masthead {
+  margin-bottom: 2rem;
+  &__name {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  &__tagline {
+    margin: 0.25rem 0 0;
+    font-size: 1.1rem;
+    color: $muted;
+  }
+}
+
+.content h1 { font-size: 1.8rem; font-weight: 900; }
+
+/* Section headings: letter-spaced with a trailing rule, like "Work Experience." */
+.content h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.25rem 0 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $navy;
+  &::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: $navy;
+  }
+}
+
+.content h3 {
+  margin: 1.5rem 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.content p, .content li { font-size: 0.95rem; }
+.content ul { padding-left: 1.25rem; }
+.content li { margin-bottom: 0.25rem; }
+.content hr { border: 0; border-top: 1px solid $rule; margin: 2rem 0; }
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 760px) {
+  .page { flex-direction: column; }
+  .sidebar {
+    flex: none;
+    padding-bottom: 1.5rem;
+    &::after { display: none; }
+  }
+  .sidebar__photo img { max-width: 220px; margin: 0 auto; }
+  .sidebar__logo { display: none; }
+  .content { padding: 1.5rem 1rem 2rem; }
+  .masthead__name { font-size: 1.9rem; }
+}
